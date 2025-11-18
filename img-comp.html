@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online image compression tool to optimize your images for web and mobile. Reduce file size while maintaining quality.">
-    <meta name="keywords" content="image compression, optimize images, reduce image size, image optimizer, web images">
-    <title>ImageCompress Pro - Free Online Image Compression Tool</title>
+    <meta name="description" content="All-in-one toolkit for images and PDFs. Compress, convert, edit and optimize your files with our powerful online tools.">
+    <meta name="keywords" content="image tools, PDF tools, compress images, edit PDF, convert files, online tools">
+    <title>ToolKit Pro - All-in-One Image & PDF Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -14,12 +14,12 @@
             --primary-light: #9F7AEA;
             --accent: #D53F8C;
             --accent-light: #ED64A6;
+            --secondary: #38B2AC;
             --dark: #1A202C;
             --dark-light: #2D3748;
             --light: #F7FAFC;
             --gray: #A0AEC0;
             --gray-light: #E2E8F0;
-            --gold: #D69E2E;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             --radius: 12px;
@@ -116,11 +116,31 @@
             width: 100%;
         }
         
-        .cta-button {
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .login-button {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .login-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .signup-button {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: var(--radius);
             font-weight: 600;
             cursor: pointer;
@@ -128,7 +148,7 @@
             box-shadow: var(--shadow);
         }
         
-        .cta-button:hover {
+        .signup-button:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
@@ -190,107 +210,9 @@
             color: var(--accent);
         }
         
-        /* Signup Section */
-        .signup-section {
+        /* Tools Section */
+        .tools-section {
             padding: 80px 0;
-            text-align: center;
-        }
-        
-        .signup-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius);
-            padding: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .signup-container h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--light);
-        }
-        
-        .signup-container p {
-            color: var(--gray);
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        
-        .signup-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .form-group {
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--light);
-            font-weight: 500;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 14px 16px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(15, 23, 42, 0.5);
-            color: var(--light);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.2);
-        }
-        
-        .signup-button {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            border: none;
-            padding: 16px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-        
-        .signup-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .login-link {
-            margin-top: 20px;
-            color: var(--gray);
-        }
-        
-        .login-link a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-        
-        /* How It Works Section */
-        .how-it-works {
-            padding: 80px 0;
-            background: rgba(15, 23, 42, 0.3);
         }
         
         .section-header {
@@ -312,25 +234,24 @@
             margin: 0 auto;
         }
         
-        .steps-container {
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .step-card {
+        .tool-card {
             background: rgba(30, 41, 59, 0.6);
             backdrop-filter: blur(10px);
             border-radius: var(--radius);
-            padding: 35px 30px;
-            text-align: center;
+            padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
         
-        .step-card::before {
+        .tool-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -343,39 +264,146 @@
             transition: var(--transition);
         }
         
-        .step-card:hover::before {
+        .tool-card:hover::before {
             transform: scaleX(1);
         }
         
-        .step-card:hover {
+        .tool-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
             border-color: rgba(139, 95, 191, 0.3);
         }
         
-        .step-number {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        .step-card h3 {
+        .tool-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--light);
         }
         
-        .step-card p {
+        .tool-card p {
             color: var(--gray);
+            margin-bottom: 20px;
             line-height: 1.7;
+        }
+        
+        .tool-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .tool-features li {
+            margin-bottom: 8px;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tool-features li i {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+        
+        .tool-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+        
+        .tool-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Categories Section */
+        .categories-section {
+            padding: 80px 0;
+            background: rgba(15, 23, 42, 0.3);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(139, 95, 191, 0.3);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .category-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .category-card p {
+            color: var(--gray);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray);
         }
         
         /* Ad Space */
@@ -510,7 +538,9 @@
             }
             
             nav ul {
-                gap: 20px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             .hero h1 {
@@ -522,12 +552,13 @@
                 align-items: center;
             }
             
-            .signup-container {
-                padding: 30px 20px;
-            }
-            
             .section-header h2 {
                 font-size: 2rem;
+            }
+            
+            .auth-buttons {
+                width: 100%;
+                justify-content: center;
             }
         }
         
@@ -540,12 +571,20 @@
                 font-size: 2rem;
             }
             
-            .how-it-works {
+            .tools-section, .categories-section, .stats-section {
                 padding: 50px 0;
             }
             
             .section-header h2 {
                 font-size: 1.8rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-value {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -556,17 +595,22 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-compress-alt logo-icon"></i>
-                    Image<span>Compress</span> Pro
+                    <i class="fas fa-toolbox logo-icon"></i>
+                    ToolKit<span>Pro</span>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
-                <button class="cta-button" id="getStartedBtn">Get Started</button>
+                <div class="auth-buttons">
+                    <button class="login-button">Log In</button>
+                    <button class="signup-button">Sign Up Free</button>
+                </div>
             </div>
         </div>
     </header>
@@ -574,13 +618,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Optimize Your Images with Elegance</h1>
-            <p>Reduce image file size without sacrificing quality. Our advanced compression algorithm ensures your images load faster while looking stunning on any device.</p>
+            <h1>All-In-One Toolkit for Images & PDFs</h1>
+            <p>Powerful, easy-to-use online tools to compress, convert, edit and optimize your images and PDF files. No installation required.</p>
             
             <div class="hero-badges">
                 <div class="badge">
                     <i class="fas fa-shield-alt"></i>
-                    <span>Secure & Private</span>
+                    <span>100% Secure</span>
                 </div>
                 <div class="badge">
                     <i class="fas fa-bolt"></i>
@@ -588,7 +632,7 @@
                 </div>
                 <div class="badge">
                     <i class="fas fa-infinity"></i>
-                    <span>Unlimited Compression</span>
+                    <span>Unlimited Usage</span>
                 </div>
             </div>
         </div>
@@ -605,70 +649,181 @@
         </div>
     </div>
 
-    <!-- Signup Section -->
-    <section class="signup-section" id="signup">
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools">
         <div class="container">
-            <div class="signup-container">
-                <h2>Create Your Account</h2>
-                <p>Sign up now to start optimizing your images with our powerful compression tool.</p>
+            <div class="section-header">
+                <h2>Our Powerful Tools</h2>
+                <p>Discover our collection of specialized tools designed to make your work easier and more efficient</p>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Image Tools -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Image Compressor</h3>
+                    <p>Reduce image file size without losing quality. Perfect for web optimization and faster loading.</p>
+                    <ul class="tool-features">
+                        <li><i class="fas fa-check"></i> Support for JPG, PNG, WebP</li>
+                        <li><i class="fas fa-check"></i> Adjustable compression level</li>
+                        <li><i class="fas fa-check"></i> Batch processing</li>
+                        <li><i class="fas fa-check"></i> Quality preservation</li>
+                    </ul>
+                    <button class="tool-button">Use Tool</button>
+                </div>
                 
-                <form class="signup-form">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-exchange-alt"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
+                    <h3>Image Converter</h3>
+                    <p>Convert images between different formats with high quality and fast processing.</p>
+                    <ul class="tool-features">
+                        <li><i class="fas fa-check"></i> JPG, PNG, WebP, GIF, SVG</li>
+                        <li><i class="fas fa-check"></i> Bulk conversion</li>
+                        <li><i class="fas fa-check"></i> Preserve transparency</li>
+                        <li><i class="fas fa-check"></i> Custom dimensions</li>
+                    </ul>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-crop-alt"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Create a password" required>
+                    <h3>Image Editor</h3>
+                    <p>Crop, resize, rotate and apply filters to your images with our intuitive online editor.</p>
+                    <ul class="tool-features">
+                        <li><i class="fas fa-check"></i> Crop & resize tools</li>
+                        <li><i class="fas fa-check"></i> Filters & effects</li>
+                        <li><i class="fas fa-check"></i> Text overlay</li>
+                        <li><i class="fas fa-check"></i> Drawing tools</li>
+                    </ul>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                
+                <!-- PDF Tools -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-pdf"></i>
                     </div>
-                    
-                    <button type="submit" class="signup-button">Create Account</button>
-                    
-                    <div class="login-link">
-                        Already have an account? <a href="#">Log in</a>
+                    <h3>PDF Compressor</h3>
+                    <p>Reduce PDF file size while maintaining quality. Perfect for email attachments and web use.</p>
+                    <ul class="tool-features">
+                        <li><i class="fas fa-check"></i> Smart compression</li>
+                        <li><i class="fas fa-check"></i> Preserve text quality</li>
+                        <li><i class="fas fa-check"></i> Optimize images in PDF</li>
+                        <li><i class="fas fa-check"></i> Batch processing</li>
+                    </ul>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-export"></i>
                     </div>
-                </form>
+                    <h3>PDF Converter</h3>
+                    <p>Convert PDF files to Word, Excel, PowerPoint, images and more with high accuracy.</p>
+                    <ul class="tool-features">
+                        <li><i class="fas fa-check"></i> PDF to Word, Excel, PPT</li>
+                        <li><i class="fas fa-check"></i> PDF to JPG, PNG</li>
+                        <li><i class="fas fa-check"></i> OCR technology</li>
+                        <li><i class="fas fa-check"></i> Preserve formatting</li>
+                    </ul>
+                    <button class="tool-button">Use Tool</button>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>PDF Editor</h3>
+                    <p>Edit your PDF files online - add text, images, annotations, and rearrange pages.</p>
+                    <ul class="tool-features">
+                        <li><i class="fas fa-check"></i> Add text & images</li>
+                        <li><i class="fas fa-check"></i> Annotate & highlight</li>
+                        <li><i class="fas fa-check"></i> Rearrange pages</li>
+                        <li><i class="fas fa-check"></i> Fill forms</li>
+                    </ul>
+                    <button class="tool-button">Use Tool</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
         <div class="container">
             <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Follow these simple steps to optimize your images with our powerful tool</p>
+                <h2>Tool Categories</h2>
+                <p>Browse our tools by category to find exactly what you need</p>
             </div>
             
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Account</h3>
-                    <p>Sign up for free to access our powerful image compression tools. No credit card required.</p>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Image Tools</h3>
+                    <p>Compress, convert, edit and optimize your images</p>
                 </div>
                 
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Upload Your Images</h3>
-                    <p>Drag and drop your images or browse to select files from your device. We support all common image formats.</p>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>PDF Tools</h3>
+                    <p>Compress, convert, edit and manage PDF files</p>
                 </div>
                 
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Adjust Settings</h3>
-                    <p>Customize compression level, image quality, and dimensions to meet your specific needs.</p>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-file-video"></i>
+                    </div>
+                    <h3>Video Tools</h3>
+                    <p>Convert, compress and edit video files</p>
                 </div>
                 
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Download & Use</h3>
-                    <p>Download your optimized images and use them on your website, app, or social media with faster loading times.</p>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-file-audio"></i>
+                    </div>
+                    <h3>Audio Tools</h3>
+                    <p>Convert, compress and edit audio files</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Thousands</h2>
+                <p>Our tools are used by professionals and individuals worldwide</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">50K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">2M+</div>
+                    <div class="stat-label">Files Processed</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">99.8%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">4.9/5</div>
+                    <div class="stat-label">User Rating</div>
                 </div>
             </div>
         </div>
@@ -690,8 +845,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>ImageCompress Pro</h3>
-                    <p>The ultimate tool for optimizing your images for web and mobile. Fast, secure, and completely free.</p>
+                    <h3>ToolKit Pro</h3>
+                    <p>Your all-in-one solution for image and PDF tools. Fast, secure, and completely free to use.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -704,8 +859,9 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#tools"><i class="fas fa-chevron-right"></i> Tools</a></li>
+                        <li><a href="#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
                     </ul>
                 </div>
                 
@@ -721,7 +877,7 @@
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <ul>
-                        <li><a href="mailto:support@imagecompresspro.com"><i class="fas fa-envelope"></i> support@imagecompresspro.com</a></li>
+                        <li><a href="mailto:support@toolkitpro.com"><i class="fas fa-envelope"></i> support@toolkitpro.com</a></li>
                         <li><a href="#"><i class="fas fa-comment-dots"></i> Live Chat</a></li>
                         <li><a href="#"><i class="fas fa-bug"></i> Report Issue</a></li>
                     </ul>
@@ -729,24 +885,26 @@
             </div>
             
             <div class="copyright">
-                &copy; 2023 ImageCompress Pro. All rights reserved.
+                &copy; 2023 ToolKit Pro. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        // Get Started button scroll to signup section
-        document.getElementById('getStartedBtn').addEventListener('click', function() {
-            document.getElementById('signup').scrollIntoView({ 
-                behavior: 'smooth' 
+        // Tool buttons functionality
+        document.querySelectorAll('.tool-button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('You would be redirected to the tool page. In a real implementation, this would navigate to the specific tool.');
             });
         });
 
-        // Form submission
-        document.querySelector('.signup-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for signing up! You will be redirected to the compression tool shortly.');
-            // In a real application, you would handle form submission here
+        // Auth buttons functionality
+        document.querySelector('.login-button').addEventListener('click', function() {
+            alert('Login modal would open here.');
+        });
+
+        document.querySelector('.signup-button').addEventListener('click', function() {
+            alert('Signup modal would open here.');
         });
     </script>
 </body>
